@@ -1,0 +1,105 @@
+/* ==========================================================================
+   Design Tokens — 색상 / 타이포 / 간격 / 반경 / 그림자
+   ========================================================================== */
+
+:root {
+    /* ---- Color: Brand ---- */
+    --color-primary: #7B4DFF;
+    --color-primary-hover: #6935E6;
+    --color-primary-soft: #F1ECFF;
+    --color-primary-soft-text: #6935E6;
+
+    --color-ink: #17171B;
+    --color-ink-hover: #2B2B31;
+
+    --color-warn: #FF5A36;
+    --color-warn-soft: #FFE9E3;
+
+    --color-yellow: #FFD400;
+    --color-yellow-text: #40340A;
+
+    --color-success: #14B866;
+
+    /* ---- Color: Neutral / Surface ---- */
+    --color-bg: #F3F3F6;
+    --color-surface: #FFFFFF;
+    --color-surface-alt: #F7F7F9;
+    --color-border: #E7E7EC;
+    --color-border-strong: #D5D5DD;
+
+    /* ---- Color: Text ---- */
+    --color-text: #131316;
+    --color-text-secondary: #6F6F78;
+    --color-text-muted: #A6A6AF;
+    --color-text-on-dark: #FFFFFF;
+    --color-text-on-dark-secondary: rgba(255, 255, 255, 0.64);
+
+    /* ---- Typography ---- */
+    --font-display: "Pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+
+    --text-2xs: 0.6875rem;
+    --text-xs: 0.75rem;
+    --text-sm: 0.8125rem;
+    --text-base: 0.9375rem;
+    --text-md: 1.0625rem;
+    --text-lg: 1.25rem;
+    --text-xl: 1.5rem;
+    --text-2xl: 1.875rem;
+    --text-3xl: 2.375rem;
+
+    --weight-regular: 400;
+    --weight-medium: 500;
+    --weight-semibold: 600;
+    --weight-bold: 700;
+    --weight-extrabold: 800;
+
+    /* ---- Spacing (4px base) ---- */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.25rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+    --space-10: 2.5rem;
+    --space-12: 3rem;
+    --space-16: 4rem;
+
+    /* ---- Radius ---- */
+    --radius-sm: 0.5rem;
+    --radius-md: 0.875rem;
+    --radius-lg: 1.25rem;
+    --radius-xl: 1.75rem;
+    --radius-full: 9999px;
+
+    /* ---- Shadow ---- */
+    --shadow-sm: 0 1px 2px rgba(19, 19, 22, 0.04), 0 1px 1px rgba(19, 19, 22, 0.03);
+    --shadow-md: 0 8px 24px rgba(19, 19, 22, 0.08);
+    --shadow-lg: 0 16px 40px rgba(19, 19, 22, 0.12);
+    --shadow-primary: 0 10px 24px rgba(123, 77, 255, 0.28);
+
+    /* ---- Motion ---- */
+    --dur-fast: 0.12s;
+    --dur-base: 0.2s;
+    --ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+:root[data-theme="dark"] {
+    --color-bg: #101014;
+    --color-surface: #1A1A20;
+    --color-surface-alt: #212128;
+    --color-border: #2B2B33;
+    --color-border-strong: #37373F;
+
+    --color-text: #F5F5F7;
+    --color-text-secondary: #A6A6B0;
+    --color-text-muted: #6F6F78;
+
+    --color-primary-soft: rgba(123, 77, 255, 0.16);
+    --color-primary-soft-text: #B49BFF;
+    --color-warn-soft: rgba(255, 90, 54, 0.16);
+
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.5);
+}

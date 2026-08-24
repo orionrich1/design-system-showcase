@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pulse Design System</title>
+<meta name="description" content="라이프스타일 챌린지 앱 UI를 분석해서 재사용 가능한 컴포넌트로 정리한 디자인 시스템 쇼케이스">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/layout.css">
+</head>
+<body>
+
+<header class="site-header">
+  <a href="#top" class="site-header__brand">
+    <span class="site-header__brand-mark">P</span>
+    Pulse Design System
+  </a>
+  <nav class="site-header__nav">
+    <a href="#tokens">토큰</a>
+    <a href="#buttons">버튼</a>
+    <a href="#cards">카드</a>
+    <a href="#forms">폼</a>
+    <a href="#navigation">내비게이션</a>
+    <a href="#scheduling">캘린더</a>
+    <a href="#demo">실전 화면</a>
+  </nav>
+  <button class="theme-toggle" id="themeToggle" aria-label="다크모드 전환" type="button">
+    <svg id="themeIconSun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+    <svg id="themeIconMoon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+  </button>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero page-shell">
+    <span class="hero__eyebrow">🎨 Component Library v1.0</span>
+    <h1 class="hero__title">라이프스타일 챌린지 앱에서 뽑아낸<br><em>재사용 가능한</em> 디자인 시스템</h1>
+    <p class="hero__desc">스케줄 관리·챌린지·리워드 화면을 컴포넌트 단위로 분해해서, 토큰·버튼·카드·내비게이션까지 일관된 규칙으로 다시 정리했습니다.</p>
+    <div class="hero__actions">
+      <a href="#tokens" class="btn btn--primary">토큰부터 보기</a>
+      <a href="#demo" class="btn btn--outline">조립된 화면 보기</a>
+    </div>
+    <div class="hero__swatches" aria-hidden="true">
+      <span class="hero__swatch" style="background:#7B4DFF"></span>
+      <span class="hero__swatch" style="background:#17171B"></span>
+      <span class="hero__swatch" style="background:#FFD400"></span>
+      <span class="hero__swatch" style="background:#FF5A36"></span>
+      <span class="hero__swatch" style="background:#F3F3F6;border-color:#E7E7EC"></span>
+    </div>
+  </section>
+
+  <!-- ============ TOKENS ============ -->
+  <section class="section page-shell" id="tokens">
+    <div class="section__head">
+      <span class="section__eyebrow">Foundations</span>
+      <h2 class="section__title">디자인 토큰</h2>
+      <p class="section__desc">색상·타이포·간격·반경을 변수로 관리해서, 모든 컴포넌트가 같은 값을 참조하도록 했습니다.</p>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection__title">색상</h3>
+      <p class="subsection__desc">브랜드 컬러(보라)를 중심으로, 잉크(블랙) / 옐로우 / 웜(경고) 4가지 액센트를 함께 씁니다.</p>
+      <div class="swatch-grid">
+        <div class="swatch"><div class="swatch__color" style="background:#7B4DFF"></div><div class="swatch__meta"><div class="swatch__name">Primary</div><div class="swatch__value">--color-primary</div></div></div>
+        <div class="swatch"><div class="swatch__color" style="background:#F1ECFF"></div><div class="swatch__meta"><div class="swatch__name">Primary Soft</div><div class="swatch__value">--color-primary-soft</div></div></div>
+        <div class="swatch"><div class="swatch__color" style="background:#17171B"></div><div class="swatch__meta"><div class="swatch__name">Ink</div><div class="swatch__value">--color-ink</div></div></div>
+        <div class="swatch"><div class="swatch__color" style="background:#FFD400"></div><div class="swatch__meta"><div class="swatch__name">Yellow</div><div class="swatch__value">--color-yellow</div></div></div>
+        <div class="swatch"><div class="swatch__color" style="background:#FF5A36"></div><div class="swatch__meta"><div class="swatch__name">Warn</div><div class="swatch__value">--color-warn</div></div></div>
+        <div class="swatch"><div class="swatch__color" style="background:#14B866"></div><div class="swatch__meta"><div class="swatch__name">Success</div><div class="swatch__value">--color-success</div></div></div>
+        <div class="swatch"><div class="swatch__color" style="background:#F3F3F6;border-bottom:1px solid #E7E7EC"></div><div class="swatch__meta"><div class="swatch__name">Background</div><div class="swatch__value">--color-bg</div></div></div>
+        <div class="swatch"><div class="swatch__color" style="background:#FFFFFF;border-bottom:1px solid #E7E7EC"></div><div class="swatch__meta"><div class="swatch__name">Surface</div><div class="swatch__value">--color-surface</div></div></div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection__title">타이포그래피</h3>
+      <p class="subsection__desc">Pretendard 기반, 헤드라인은 800(ExtraBold)로 강하게 대비를 줍니다.</p>
+      <div class="card" style="padding: var(--space-2) var(--space-6);">
+        <div class="type-scale-row"><span class="type-scale-row__label">3xl / 800</span><span class="type-scale-row__sample" style="font-size:var(--text-3xl)">여러분들 위해 준비했어요</span></div>
+        <div class="type-scale-row"><span class="type-scale-row__label">2xl / 800</span><span class="type-scale-row__sample" style="font-size:var(--text-2xl)">지금 준비하세요</span></div>
+        <div class="type-scale-row"><span class="type-scale-row__label">lg / 700</span><span class="type-scale-row__sample" style="font-size:var(--text-lg)">안녕하세요 마디아님</span></div>
+        <div class="type-scale-row"><span class="type-scale-row__label">md / 600</span><span class="type-scale-row__sample" style="font-size:var(--text-md);font-weight:600">도전 항목 선택</span></div>
+        <div class="type-scale-row"><span class="type-scale-row__label">base / 400</span><span class="type-scale-row__sample" style="font-size:var(--text-base);font-weight:400">나만의 일상 스케줄을 관리하며 공유하세요</span></div>
+        <div class="type-scale-row"><span class="type-scale-row__label">xs / 500</span><span class="type-scale-row__sample" style="font-size:var(--text-xs);font-weight:500;color:var(--color-text-secondary)">언제든 떠날 수 있는 도전!</span></div>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="subsection">
+        <h3 class="subsection__title">여백 (4px 기준)</h3>
+        <div class="card" style="padding: var(--space-5) var(--space-6);">
+          <div class="spacing-row"><span class="spacing-row__label">space-2</span><div class="spacing-row__bar" style="width:var(--space-2)"></div></div>
+          <div class="spacing-row"><span class="spacing-row__label">space-4</span><div class="spacing-row__bar" style="width:var(--space-4)"></div></div>
+          <div class="spacing-row"><span class="spacing-row__label">space-6</span><div class="spacing-row__bar" style="width:var(--space-6)"></div></div>
+          <div class="spacing-row"><span class="spacing-row__label">space-8</span><div class="spacing-row__bar" style="width:var(--space-8)"></div></div>
+          <div class="spacing-row"><span class="spacing-row__label">space-12</span><div class="spacing-row__bar" style="width:var(--space-12)"></div></div>
+        </div>
+      </div>
+      <div class="subsection">
+        <h3 class="subsection__title">모서리 반경</h3>
+        <div class="radius-grid">
+          <div class="radius-sample"><div class="radius-sample__box" style="border-radius:var(--radius-sm)"></div><span class="radius-sample__label">sm</span></div>
+          <div class="radius-sample"><div class="radius-sample__box" style="border-radius:var(--radius-md)"></div><span class="radius-sample__label">md</span></div>
+          <div class="radius-sample"><div class="radius-sample__box" style="border-radius:var(--radius-lg)"></div><span class="radius-sample__label">lg</span></div>
+          <div class="radius-sample"><div class="radius-sample__box" style="border-radius:var(--radius-xl)"></div><span class="radius-sample__label">xl</span></div>
+          <div class="radius-sample"><div class="radius-sample__box" style="border-radius:var(--radius-full)"></div><span class="radius-sample__label">full</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BUTTONS ============ -->
+  <section class="section page-shell" id="buttons">
+    <div class="section__head">
+      <span class="section__eyebrow">Actions</span>
+      <h2 class="section__title">버튼</h2>
+      <p class="section__desc">모든 버튼은 완전한 알약(pill) 형태를 기본으로 합니다. 강조 정도에 따라 4가지 톤을 씁니다.</p>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection__title">톤(Variant)</h3>
+      <div class="demo-stage">
+        <button class="btn btn--primary">선택완료</button>
+        <button class="btn btn--ink">✓ 나의 활동 인증</button>
+        <button class="btn btn--outline">더보기</button>
+        <button class="btn btn--ghost">건너뛰기</button>
+      </div>
+      <details class="code-toggle"><summary>코드 보기</summary><pre><code>&lt;button class="btn btn--primary"&gt;선택완료&lt;/button&gt;
+&lt;button class="btn btn--ink"&gt;나의 활동 인증&lt;/button&gt;
+&lt;button class="btn btn--outline"&gt;더보기&lt;/button&gt;
+&lt;button class="btn btn--ghost"&gt;건너뛰기&lt;/button&gt;</code></pre></details>
+    </div>
+
+    <div class="grid-2">
+      <div class="subsection">
+        <h3 class="subsection__title">크기 &amp; 전체너비</h3>
+        <div class="demo-stage" style="flex-direction:column;align-items:stretch;">
+          <button class="btn btn--primary btn--sm" style="align-self:flex-start">Small</button>
+          <button class="btn btn--primary btn--block">시작하기</button>
+        </div>
+      </div>
+      <div class="subsection">
+        <h3 class="subsection__title">아이콘 버튼</h3>
+        <div class="demo-stage">
+          <button class="icon-btn" aria-label="뒤로">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <button class="icon-btn" aria-label="찜하기">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+          </button>
+          <button class="icon-btn" aria-label="알림">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CHIPS & TABS ============ -->
+  <section class="section page-shell" id="chips">
+    <div class="section__head">
+      <span class="section__eyebrow">Selection</span>
+      <h2 class="section__title">칩 &amp; 탭</h2>
+      <p class="section__desc">검색 필터, 카테고리 전환처럼 "선택 상태"를 표현하는 컴포넌트입니다.</p>
+    </div>
+
+    <div class="grid-2">
+      <div class="subsection">
+        <h3 class="subsection__title">필터 칩 (제거 가능)</h3>
+        <div class="demo-stage" id="chipDemo">
+          <span class="chip chip--removable">달리기 <button class="chip__remove" aria-label="제거">✕</button></span>
+          <span class="chip chip--removable">종일 걷기 <button class="chip__remove" aria-label="제거">✕</button></span>
+          <span class="chip chip--outline">+ 필터 추가</span>
+        </div>
+      </div>
+      <div class="subsection">
+        <h3 class="subsection__title">세그먼트 탭 (Pill)</h3>
+        <div class="demo-stage">
+          <div class="tabs" id="segmentTabs">
+            <button class="tabs__item is-active" type="button">일상 도전</button>
+            <button class="tabs__item" type="button">새로운 시작</button>
+            <button class="tabs__item" type="button">그만두기</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection__title">언더라인 탭</h3>
+      <div class="demo-stage">
+        <div class="tabs tabs--underline" id="underlineTabs">
+          <button class="tabs__item is-active" type="button">토큰</button>
+          <button class="tabs__item" type="button">컴포넌트</button>
+          <button class="tabs__item" type="button">패턴</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CARDS ============ -->
+  <section class="section page-shell" id="cards">
+    <div class="section__head">
+      <span class="section__eyebrow">Content</span>
+      <h2 class="section__title">카드</h2>
+      <p class="section__desc">통계 요약, 프로모션 배너, 리스트 항목 3종류의 카드를 표준화했습니다.</p>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection__title">통계 카드</h3>
+      <div class="grid-2">
+        <div class="stat-card">
+          <div class="stat-card__row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>1,234</div>
+          <span class="stat-card__label">모든 채팅</span>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card__row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9a3 3 0 1 0 0 6M9.5 4.5h5a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2h-5a2 2 0 0 1-2-2v-11a2 2 0 0 1 2-2z"/></svg>130장</div>
+          <span class="stat-card__label">할인 쿠폰</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection__title">프로모션 배너 카드</h3>
+      <div class="grid-3">
+        <div class="promo-card promo-card--primary">
+          <div><p class="promo-card__title">지금 참여하고<br>혜택을 받으세요</p><p class="promo-card__desc">많은 사용자들이 혜택을 받고 있어요</p></div>
+          <span class="promo-card__icon">🎁</span>
+        </div>
+        <div class="promo-card promo-card--ink">
+          <div><p class="promo-card__title">여러분들 위해<br>지금 준비했어요!</p><p class="promo-card__desc">다신 오지 않는 특별한 기획</p></div>
+          <span class="promo-card__icon">📣</span>
+        </div>
+        <div class="promo-card promo-card--yellow">
+          <div><p class="promo-card__title">알림을 통해<br>소식을 받으세요</p><p class="promo-card__desc">아직도 신청 안했어요?</p></div>
+          <span class="promo-card__icon">💌</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection__title">리스트 카드</h3>
+      <div class="grid-2">
+        <div class="list-card">
+          <div class="list-card__icon">🏃</div>
+          <div class="list-card__body"><div class="list-card__title">무제한 걷기 운동</div><div class="list-card__desc">100km</div></div>
+          <div class="list-card__trailing"><span class="check-pill is-checked"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span></div>
+        </div>
+        <div class="list-card">
+          <div class="list-card__icon">🚵</div>
+          <div class="list-card__body"><div class="list-card__title">자연 등산 도전기</div><div class="list-card__desc">1,480m</div></div>
+          <div class="list-card__trailing"><span class="check-pill"></span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection__title">메뉴 리스트 행</h3>
+      <div>
+        <div class="list-row">
+          <div class="list-row__main">
+            <div class="list-row__icon">📅</div>
+            <div><div class="list-row__title">월에 상관 없어요</div><div class="list-row__desc">언제든 떠날 수 있는 도전!</div></div>
+          </div>
+          <svg class="list-row__chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+        </div>
+        <div class="list-row">
+          <div class="list-row__main">
+            <div class="list-row__icon">🚀</div>
+            <div><div class="list-row__title">어디든 상관 없어요</div><div class="list-row__desc">어디든 빠르게!</div></div>
+          </div>
+          <svg class="list-row__chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FORMS ============ -->
+  <section class="section page-shell" id="forms">
+    <div class="section__head">
+      <span class="section__eyebrow">Inputs</span>
+      <h2 class="section__title">폼 컨트롤</h2>
+      <p class="section__desc">검색창, 체크 필, 토글 스위치까지 상호작용 가능한 기본 입력 요소입니다.</p>
+    </div>
+
+    <div class="grid-3">
+      <div class="subsection">
+        <h3 class="subsection__title">검색 입력</h3>
+        <div class="search-input">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+          <input type="search" placeholder="검색어를 입력하세요">
+        </div>
+      </div>
+      <div class="subsection">
+        <h3 class="subsection__title">체크 필</h3>
+        <div class="demo-stage" id="checkDemo" style="padding:var(--space-6)">
+          <span class="check-pill is-checked" role="checkbox" aria-checked="true" tabindex="0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+          <span class="check-pill" role="checkbox" aria-checked="false" tabindex="0"></span>
+        </div>
+      </div>
+      <div class="subsection">
+        <h3 class="subsection__title">토글 스위치</h3>
+        <div class="demo-stage" id="switchDemo" style="padding:var(--space-6)">
+          <button class="switch is-on" role="switch" aria-checked="true"></button>
+          <button class="switch" role="switch" aria-checked="false"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ NAVIGATION ============ -->
+  <section class="section page-shell" id="navigation">
+    <div class="section__head">
+      <span class="section__eyebrow">Wayfinding</span>
+      <h2 class="section__title">내비게이션</h2>
+      <p class="section__desc">상단 앱바, 하단 탭바, 프로필 칩 — 모바일 화면 어디서나 반복되는 이동 요소입니다.</p>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection__title">상단 앱바</h3>
+      <div class="demo-stage" style="display:block">
+        <div class="app-bar">
+          <button class="icon-btn" aria-label="뒤로"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+          <span class="app-bar__title">도전 항목 선택</span>
+          <button class="icon-btn" aria-label="언어"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18z"/></svg></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="subsection">
+        <h3 class="subsection__title">하단 탭바</h3>
+        <div class="demo-stage" style="display:block;padding:0;overflow:hidden">
+          <nav class="tab-bar">
+            <button class="tab-bar__item is-active" aria-label="홈"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg></button>
+            <button class="tab-bar__item" aria-label="검색"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></button>
+            <button class="tab-bar__item" aria-label="챌린지"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M10 8l6 4-6 4V8z"/></svg></button>
+            <button class="tab-bar__item" aria-label="채팅"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-4.7 7.6 8.5 8.5 0 0 1-8.7-.5L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 8.5-8.5h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></button>
+          </nav>
+        </div>
+      </div>
+      <div class="subsection">
+        <h3 class="subsection__title">프로필 칩</h3>
+        <div class="demo-stage">
+          <span class="profile-chip">
+            <img class="avatar" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=80&h=80&fit=crop&crop=faces" alt="">
+            Madia Youtube
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CALENDAR / SCHEDULING ============ -->
+  <section class="section page-shell" id="scheduling">
+    <div class="section__head">
+      <span class="section__eyebrow">Time</span>
+      <h2 class="section__title">캘린더 &amp; 스케줄링</h2>
+      <p class="section__desc">월간 달력, 주간 스트립, 일정 카드, 타임피커까지 시간을 다루는 컴포넌트 세트입니다.</p>
+    </div>
+
+    <div class="grid-2">
+      <div class="subsection">
+        <h3 class="subsection__title">월간 캘린더</h3>
+        <div class="calendar">
+          <div class="calendar__head">2026년 8월</div>
+          <div class="calendar__grid">
+            <span class="calendar__dow">일</span><span class="calendar__dow">월</span><span class="calendar__dow">화</span><span class="calendar__dow">수</span><span class="calendar__dow">목</span><span class="calendar__dow">금</span><span class="calendar__dow">토</span>
+            <span class="calendar__day calendar__day--muted">26</span><span class="calendar__day calendar__day--muted">27</span><span class="calendar__day calendar__day--muted">28</span><span class="calendar__day calendar__day--muted">29</span><span class="calendar__day calendar__day--muted">30</span><span class="calendar__day calendar__day--muted">31</span><span class="calendar__day">1</span>
+            <span class="calendar__day">2</span><span class="calendar__day">3</span><span class="calendar__day">4</span><span class="calendar__day">5</span><span class="calendar__day">6</span><span class="calendar__day">7</span><span class="calendar__day">8</span>
+            <span class="calendar__day">9</span><span class="calendar__day">10</span><span class="calendar__day">11</span><span class="calendar__day">12</span><span class="calendar__day">13</span><span class="calendar__day">14</span><span class="calendar__day">15</span>
+            <span class="calendar__day">16</span><span class="calendar__day">17</span><span class="calendar__day">18</span><span class="calendar__day">19</span><span class="calendar__day">20</span><span class="calendar__day">21</span><span class="calendar__day">22</span>
+            <span class="calendar__day">23</span><span class="calendar__day is-selected">24</span><span class="calendar__day">25</span><span class="calendar__day">26</span><span class="calendar__day">27</span><span class="calendar__day">28</span><span class="calendar__day">29</span>
+          </div>
+        </div>
+      </div>
+      <div class="subsection">
+        <h3 class="subsection__title">주간 스트립 + 일정 카드</h3>
+        <div class="week-strip" style="margin-bottom:var(--space-3)">
+          <div class="week-strip__day"><span>일</span><span>7</span></div>
+          <div class="week-strip__day"><span>월</span><span>8</span></div>
+          <div class="week-strip__day is-active"><span>화</span><span>9</span></div>
+          <div class="week-strip__day"><span>수</span><span>10</span></div>
+          <div class="week-strip__day"><span>목</span><span>11</span></div>
+          <div class="week-strip__day"><span>금</span><span>12</span></div>
+          <div class="week-strip__day"><span>토</span><span>13</span></div>
+        </div>
+        <div class="agenda-item">
+          <div class="agenda-item__head">
+            <span class="time-pill">03:00 ~ 04:00</span>
+            <svg class="list-row__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+          </div>
+          <p class="agenda-item__title">새벽 등산 3km 왕복 달리기 / 빠르게 걷기</p>
+        </div>
+        <div class="agenda-item">
+          <div class="agenda-item__head">
+            <span class="time-pill time-pill--warn">08:00 ~ 12:00</span>
+            <svg class="list-row__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+          </div>
+          <p class="agenda-item__title">영어학원 오전반 수업 듣고 친구 만나기</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3 class="subsection__title">타임피커 (바텀 시트)</h3>
+      <div class="demo-stage" style="justify-content:center;background:var(--color-surface-alt)">
+        <div class="sheet" style="width:320px">
+          <div class="sheet__handle"></div>
+          <p class="sheet__title">시간을 선택하세요</p>
+          <p class="time-readout">03:00</p>
+          <div class="tabs" style="margin:0 auto var(--space-6);width:fit-content">
+            <button class="tabs__item is-active" type="button">오전</button>
+            <button class="tabs__item" type="button">오후</button>
+          </div>
+          <div class="dial" aria-hidden="true">
+            <span class="dial__number" style="top:8px;left:50%;">12</span>
+            <span class="dial__number" style="top:23%;left:78%;">1</span>
+            <span class="dial__number" style="top:50%;left:92%;">2</span>
+            <span class="dial__number" style="top:77%;left:78%;">3</span>
+            <span class="dial__number" style="top:92%;left:50%;">4</span>
+            <span class="dial__number" style="top:77%;left:22%;">5</span>
+            <span class="dial__number" style="top:50%;left:8%;">9</span>
+            <span class="dial__number" style="top:23%;left:22%;">11</span>
+            <div class="dial__hand" style="transform:rotate(90deg)"></div>
+            <div class="dial__center"></div>
+            <div class="dial__knob" style="top:50%;left:92%;">3</div>
+          </div>
+          <button class="btn btn--primary btn--block">✓ 선택완료</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LIVE DEMO ============ -->
+  <section class="section page-shell" id="demo" style="border-bottom:none">
+    <div class="section__head">
+      <span class="section__eyebrow">In Action</span>
+      <h2 class="section__title">컴포넌트로 조립한 실제 화면</h2>
+      <p class="section__desc">위 컴포넌트들만 가지고 원본 레퍼런스 화면 두 장을 그대로 재구성했습니다.</p>
+    </div>
+
+    <div class="demo-stage demo-stage--phone-row">
+      <div>
+        <div class="phone">
+          <div class="phone__screen">
+            <span class="phone__notch"></span>
+            <div class="phone__content">
+              <div class="app-bar" style="height:2.5rem">
+                <img class="avatar" style="width:2.25rem;height:2.25rem" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=80&h=80&fit=crop&crop=faces" alt="">
+                <span class="app-bar__title">지금 준비하세요</span>
+                <button class="icon-btn" style="width:2.25rem;height:2.25rem" aria-label="알림"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg></button>
+              </div>
+              <div class="grid-2" style="gap:var(--space-3)">
+                <div class="stat-card" style="padding:var(--space-4)">
+                  <div class="stat-card__row" style="font-size:var(--text-base)">💬 1,234</div>
+                  <span class="stat-card__label">모든 채팅</span>
+                </div>
+                <div class="stat-card" style="padding:var(--space-4)">
+                  <div class="stat-card__row" style="font-size:var(--text-base)">🎫 130장</div>
+                  <span class="stat-card__label">할인 쿠폰</span>
+                </div>
+              </div>
+              <button class="btn btn--ink btn--block">✓ 나의 활동 인증</button>
+              <div class="promo-card promo-card--primary" style="padding:var(--space-4);border-radius:var(--radius-lg)">
+                <div><p class="promo-card__title" style="font-size:var(--text-base)">지금 참여하고<br>혜택을 받으세요</p><p class="promo-card__desc" style="font-size:var(--text-2xs)">많은 사용자들이 혜택을 받고 있어요</p></div>
+                <span class="promo-card__icon" style="font-size:2rem">🎁</span>
+              </div>
+              <div class="promo-card promo-card--ink" style="padding:var(--space-4);border-radius:var(--radius-lg)">
+                <div><p class="promo-card__title" style="font-size:var(--text-base)">여러분들 위해<br>지금 준비했어요!</p><p class="promo-card__desc" style="font-size:var(--text-2xs)">다신 오지 않는 특별한 기획</p></div>
+                <span class="promo-card__icon" style="font-size:2rem">📣</span>
+              </div>
+            </div>
+            <nav class="tab-bar" style="height:3.5rem">
+              <button class="tab-bar__item is-active" style="width:2.25rem;height:2.25rem"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg></button>
+              <button class="tab-bar__item" style="width:2.25rem;height:2.25rem"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></button>
+              <button class="tab-bar__item" style="width:2.25rem;height:2.25rem"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M10 8l6 4-6 4V8z"/></svg></button>
+              <button class="tab-bar__item" style="width:2.25rem;height:2.25rem"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-4.7 7.6 8.5 8.5 0 0 1-8.7-.5L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 8.5-8.5h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></button>
+            </nav>
+          </div>
+        </div>
+        <p class="phone__caption">홈 · 대시보드</p>
+      </div>
+
+      <div>
+        <div class="phone">
+          <div class="phone__screen">
+            <span class="phone__notch"></span>
+            <div class="phone__content">
+              <div class="app-bar" style="height:2.5rem">
+                <button class="icon-btn" style="width:2.25rem;height:2.25rem" aria-label="뒤로"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+                <span class="app-bar__title">도전 항목 선택</span>
+                <button class="icon-btn" style="width:2.25rem;height:2.25rem" aria-label="언어"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18z"/></svg></button>
+              </div>
+              <div class="tabs" style="width:100%">
+                <button class="tabs__item is-active" style="flex:1" type="button">일상 도전</button>
+                <button class="tabs__item" style="flex:1" type="button">새로운 시작</button>
+              </div>
+              <div class="search-input" style="height:2.5rem">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+                <input type="search" placeholder="검색어를 입력하세요">
+              </div>
+              <div style="display:flex;gap:var(--space-2)">
+                <span class="chip chip--removable" style="font-size:var(--text-xs)">달리기 <button class="chip__remove" aria-label="제거">✕</button></span>
+                <span class="chip chip--removable" style="font-size:var(--text-xs)">종일 걷기 <button class="chip__remove" aria-label="제거">✕</button></span>
+              </div>
+              <div class="list-card" style="padding:var(--space-3)">
+                <div class="list-card__icon" style="width:2.25rem;height:2.25rem;font-size:1.1rem">🏃</div>
+                <div class="list-card__body"><div class="list-card__title" style="font-size:var(--text-sm)">무제한 걷기 운동</div><div class="list-card__desc">100km</div></div>
+                <span class="check-pill is-checked" style="width:1.375rem;height:1.375rem"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+              </div>
+              <div class="list-card" style="padding:var(--space-3)">
+                <div class="list-card__icon" style="width:2.25rem;height:2.25rem;font-size:1.1rem">🏅</div>
+                <div class="list-card__body"><div class="list-card__title" style="font-size:var(--text-sm)">10km 마라톤</div><div class="list-card__desc">10km</div></div>
+                <span class="check-pill is-checked" style="width:1.375rem;height:1.375rem"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+              </div>
+              <div class="list-card" style="padding:var(--space-3)">
+                <div class="list-card__icon" style="width:2.25rem;height:2.25rem;font-size:1.1rem">🥾</div>
+                <div class="list-card__body"><div class="list-card__title" style="font-size:var(--text-sm)">자연 등산 도전기</div><div class="list-card__desc">1,480m</div></div>
+                <span class="check-pill" style="width:1.375rem;height:1.375rem"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="phone__caption">도전 항목 선택</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>Pulse Design System — 레퍼런스 UI 캡처를 분석해 만든 개인 포트폴리오 프로젝트입니다.</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
